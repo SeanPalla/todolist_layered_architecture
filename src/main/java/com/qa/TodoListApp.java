@@ -23,8 +23,6 @@ public class TodoListApp {
                 TodoMenuOption option = getInputOption(input);
                 switch (option) {
                     case CREATE:
-                        System.out.println(" Create a new todo item");
-
                         todoController.create();
                         break;
                     case READ:
@@ -50,7 +48,7 @@ public class TodoListApp {
                 // can have multiple catch blocks, from most specific to least specific
                 System.out.println("Something went wrong...");
             }
-        } while (isRunning == true);
+        } while (isRunning);
     }
 
     private TodoMenuOption getInputOption(String input) {
@@ -66,7 +64,8 @@ public class TodoListApp {
     private void printMenu() {
         TodoMenuOption[] menuOptions = TodoMenuOption.values();
         for (int i = 0; i < menuOptions.length; i++) {
-            String output = String.format("[%s] %s", menuOptions[i].getInputCode(), menuOptions[i].toString());
+            String output = String.format("[%s] %s", menuOptions[i].getInputCode(), menuOptions[i].toString() +
+                    menuOptions[i].getInputInfo());
             System.out.println(output);
         }
     }

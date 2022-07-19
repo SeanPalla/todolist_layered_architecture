@@ -50,7 +50,7 @@ public class TodoController {
         String name = InputUtilities.getString("Name: ");
 
         boolean didDelete = todoRepository.deleteByName(name);
-        if (name.equals(didDelete))
+        if (didDelete)
             System.out.println("Deleted task with id: " + name);
         else
             System.out.println("Could not delete the task");
