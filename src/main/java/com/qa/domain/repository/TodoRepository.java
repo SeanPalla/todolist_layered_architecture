@@ -63,7 +63,7 @@ public class TodoRepository {
         for (int i = 0; i < todoItems.size(); i++) {
             Todo current = todoItems.get(i);
 
-            if (current.getName() == name) {
+            if (current.getName().equals(name)) {
                 didDelete = todoItems.remove(current);
                 break;
             }

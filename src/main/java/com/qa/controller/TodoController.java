@@ -2,7 +2,6 @@ package com.qa.controller;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Scanner;
 
 import com.qa.domain.entity.Todo;
 import com.qa.domain.repository.TodoRepository;
@@ -38,7 +37,6 @@ public class TodoController {
 
     public void deleteById() {
         long id = InputUtilities.getInt("ID: ");
-
         boolean didDelete = todoRepository.deleteById(id);
         if (didDelete)
             System.out.println("Deleted task with id: " + id);
@@ -48,10 +46,9 @@ public class TodoController {
 
     public void deleteByName() {
         String name = InputUtilities.getString("Name: ");
-
         boolean didDelete = todoRepository.deleteByName(name);
         if (didDelete)
-            System.out.println("Deleted task with id: " + name);
+            System.out.println("Deleted task with name: " + name);
         else
             System.out.println("Could not delete the task");
     }
